@@ -1,0 +1,69 @@
+set relativenumber number hidden nowrap
+
+set guicursor=n:hor25,i:ver20,c:ver20,v:block
+
+set clipboard=unnamedplus
+
+set termguicolors
+
+set hlsearch                      " highlight search occurrences
+set ignorecase                    " ignore case in search patterns
+set smartcase                     " no ignore case when pattern is uppercase
+set incsearch                     " show search results while typing
+set wrapscan                      " searches wrap around the end of the file
+
+set clipboard=unnamedplus
+
+" Plugins
+
+Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'machakann/vim-highlightedyank'
+
+set sneak
+
+" Remaps
+
+let mapleader = " "
+
+nmap        <M-l>           <action>(NextTab)
+nmap        <M-h>           <action>(PreviousTab)
+nmap        <leader>r       <action>(Run)
+nmap        ge              <action>(ShowErrorDescription)
+nmap        <leader>gg       <action>(Generate)
+nmap        <leader>rn      <action>(RenameElement)
+nmap        <leader>jj      <action>(QuickJavaDoc)
+nmap        <leader>ft      <action>(ChangeColorScheme)
+nmap        <leader>n       <action>(GotoNextError)
+nmap        <leader>p       <action>(GotoPreviousError)
+
+
+map <Leader>ff <action>(com.mituuz.fuzzier.Fuzzier)
+map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
+
+nmap                <M-d>           <C-d>zz
+nmap                <M-u>           <C-u>zz
+nmap                <M-j>           <C-e>
+nmap                <M-k>           <C-y>
+
+nnoremap            <leader>a       ggVG
+vnoremap            <leader>a       <Esc>
+
+" nnoremap            <leader>l       :ls<CR>:b <Space>
+nnoremap <leader>cc :nohls<return><esc>
+
+nnoremap            <leader>;       A;<Esc>
+nnoremap            <leader>.       A.<Esc>
+nnoremap            <leader>,       A,<Esc>
+nnoremap            <leader>:       A:<Esc>
+nnoremap            <leader>>       A>
+
+inoremap            jk              <Esc>
+
+nmap                L               $
+nmap                H               ^
+vmap                L               $
+vmap                H               ^
+
+nnoremap <leader>b :NERDTreeFocus<CR>
